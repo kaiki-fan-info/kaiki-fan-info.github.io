@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>木村魁希 お仕事スケジュール（ファン非公式）</title>
+<meta name="description" content="木村魁希くんの出演情報・イベント・FCなどをまとめたファン非公式のスケジュールです。">
+<!-- Xでリンクを貼った時のカード表示（OGP） -->
+<meta property="og:title" content="木村魁希 お仕事スケジュール（ファン非公式）">
+<meta property="og:description" content="現在発表されている出演情報をまとめています">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kaiki-fan-info.github.io/">
+<meta property="og:image" content="https://kaiki-fan-info.github.io/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfbf9;          /* 白い紙 */
+    --card: #ffffff;
+    --ink: #1f2a33;         /* 文字：紺がかった黒 */
+    --sub-ink: #3b4650;
+    --muted: #646d74;
+    --line: #e6e8ea;
+    --accent: #4a7a99;      /* 差し色：冬の海の青（1色だけ） */
+    --accent-soft: #eef3f6;
+    --on-accent: #ffffff;
+    --alert: #b4533f;       /* 締切間近だけに使う */
+    --hero-bg: #1f2a33;     /* NEXTカード */
+    --hero-ink: #f4f6f7;
+    --hero-muted: #a9b4bc;
+    --latin: "Cormorant Garamond", serif;
+  }
+  /* ダークモード（スマホ・PCの設定に自動で合わせる） */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12171c; --card: #1a2128; --ink: #e4e8eb; --sub-ink: #c3cad0; --muted: #8a949c;
+      --line: #2a333b; --accent: #82abc6; --accent-soft: #1f2d38; --on-accent: #10161b;
+      --alert: #e08470; --hero-bg: #22303c; --hero-ink: #f4f6f7; --hero-muted: #9fb0bd;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 72px; }
+
+  /* ヘッダー */
+  header { text-align: center; padding: 56px 0 32px; }
+  .en { font-family: var(--latin); font-size: 13px; letter-spacing: .4em; color: var(--accent); font-weight: 600; }
+  header h1 { margin: 8px 0 0; font-size: clamp(24px, 5vw, 32px); font-weight: 500; letter-spacing: .12em; }
+  header .sub { font-size: 13px; color: var(--muted); letter-spacing: .1em; margin-top: 2px; }
+  header .note { font-size: 12px; color: var(--muted); margin-top: 18px; }
+  header .note span { display: inline-block; border: 1px solid var(--line); border-radius: 99px; padding: 1px 12px; margin: 0 2px 4px; background: var(--card); }
+
+  /* 見出し */
+  section { margin-top: 44px; }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+  .sec-head .en { font-size: 15px; letter-spacing: .2em; }
+  .sec-head h2 { margin: 0; font-size: 14px; font-weight: 500; color: var(--muted); }
+
+  /* NEXT：直近の予定 */
+  .next {
+    background: var(--hero-bg); color: var(--hero-ink); border-radius: 16px; padding: 22px 24px;
+    display: grid; grid-template-columns: auto 1fr; gap: 6px 24px; align-items: center;
+  }
+  .next-label { grid-column: 1 / -1; font-family: var(--latin); letter-spacing: .35em; font-size: 13px; font-weight: 600; color: var(--hero-muted); }
+  .next-label span { font-family: "Noto Sans JP", sans-serif; letter-spacing: .1em; font-size: 11px; margin-left: 6px; font-weight: 400; }
+  .next-count { text-align: center; min-width: 84px; padding-right: 22px; border-right: 1px solid rgba(255,255,255,.18); }
+  .next-count b { display: block; font-family: var(--latin); font-size: 56px; font-weight: 600; line-height: 1; }
+  .next-count b.word { font-size: 30px; letter-spacing: .08em; padding: 8px 0 4px; }
+  .next-count span { font-size: 12px; color: var(--hero-muted); }
+  .next-genre { font-size: 11px; color: var(--hero-muted); letter-spacing: .08em; }
+  .next-title { font-size: 19px; font-weight: 700; line-height: 1.45; margin: 2px 0 4px; }
+  .next-info { font-size: 13px; color: var(--hero-muted); }
+  .next-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .next-actions a, .next-actions button {
+    font-size: 12px; text-decoration: none; padding: 6px 16px; border-radius: 99px; cursor: pointer;
+    border: 1px solid rgba(255,255,255,.3); background: transparent; color: var(--hero-ink);
+  }
+  .next-actions .primary { background: var(--hero-ink); color: var(--hero-bg); border-color: var(--hero-ink); font-weight: 700; }
+
+  .next-more { grid-column: 1 / -1; margin-top: 14px; border-top: 1px solid rgba(255,255,255,.14); }
+  .next-row {
+    display: flex; align-items: center; gap: 14px; width: 100%; padding: 10px 2px; background: none; border: 0;
+    border-bottom: 1px solid rgba(255,255,255,.08); color: var(--hero-ink); text-align: left; cursor: pointer;
+  }
+  .next-row:last-child { border-bottom: 0; }
+  .next-row:hover .nr-title { text-decoration: underline; }
+  .nr-count { font-family: var(--latin); font-size: 24px; font-weight: 600; min-width: 84px; text-align: center; line-height: 1; padding-right: 22px; }
+  .nr-count small { font-family: "Noto Sans JP", sans-serif; font-size: 11px; color: var(--hero-muted); margin-left: 2px; }
+  .nr-main { flex: 1; min-width: 0; }
+  .nr-title { display: block; font-size: 14px; font-weight: 700; line-height: 1.5; }
+  .nr-info { display: block; font-size: 12px; color: var(--hero-muted); }
+  .nr-arrow { color: var(--hero-muted); font-size: 18px; }
+
+  /* カード共通 */
+  .item {
+    display: grid; grid-template-columns: 64px 1fr; gap: 16px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 10px;
+    transition: box-shadow .25s;
+  }
+  .item.flash { box-shadow: 0 0 0 2px var(--accent); }
+  /* ジャンル「締切」：大事な申込締切だけを1件の予定として登録したもの */
+  .item.is-deadline { border: 1px dashed var(--alert); }
+  .item.is-deadline .date, .item.is-deadline .genre { color: var(--alert); }
+  .date { text-align: center; color: var(--accent); }
+  .date .d { font-family: var(--latin); font-size: 28px; font-weight: 600; line-height: 1; }
+  .date .m { font-family: var(--latin); font-size: 13px; letter-spacing: .1em; font-weight: 600; }
+  .date .w { font-size: 11px; color: var(--muted); }
+  .date .r { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+  .date .tbd { font-size: 11px; color: var(--muted); padding-top: 8px; line-height: 1.4; }
+  .head { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+  .genre { font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+  .badge { font-size: 11px; font-weight: 700; padding: 0 8px; border-radius: 4px; line-height: 20px; }
+  .badge.live { background: var(--accent); color: var(--on-accent); }
+  .badge.new { color: var(--ink); border: 1px solid var(--ink); line-height: 18px; font-family: var(--latin); letter-spacing: .1em; }
+  .title { font-weight: 700; font-size: 16px; margin: 4px 0 2px; line-height: 1.5; }
+  .role { font-size: 13px; color: var(--muted); }
+  .meta { font-size: 13px; margin-top: 6px; }
+  .meta div { display: grid; grid-template-columns: 4.5em 1fr; }
+  .meta dt { color: var(--muted); }
+  .meta dd { white-space: pre-line; }
+  .memo { font-size: 13px; margin-top: 8px; padding: 8px 12px; background: var(--bg); border-radius: 6px; white-space: pre-line; color: var(--sub-ink); }
+  /* 長いメモは折りたたみ */
+  details.more { margin-top: 8px; }
+  details.more summary { font-size: 12px; color: var(--accent); cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 4px; }
+  details.more summary::-webkit-details-marker { display: none; }
+  details.more summary::after { content: "▾"; transition: transform .2s; }
+  details.more[open] summary::after { transform: rotate(180deg); }
+  details.more .memo { margin-top: 6px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .actions a {
+    font-size: 12px; text-decoration: none; padding: 4px 12px; border-radius: 99px;
+    border: 1px solid var(--line); color: var(--ink); background: var(--card);
+  }
+  .actions a.primary { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+  .actions a:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+  /* いつでもチェック（常設） */
+  .link-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+  .link-tile {
+    display: flex; align-items: center; gap: 14px; padding: 12px 16px; text-decoration: none;
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; transition: border-color .2s;
+  }
+  .link-tile:hover { border-color: var(--accent); }
+  .link-tile .lb { font-family: var(--latin); font-size: 12px; font-weight: 600; letter-spacing: .2em; color: var(--accent); min-width: 6.5em; white-space: nowrap; flex: none; }
+  .link-tile .lt { font-size: 14px; font-weight: 700; line-height: 1.45; }
+  .link-tile .ls { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .link-tile .arrow { margin-left: auto; color: var(--muted); flex: none; }
+
+  /* 定期（月1配信など）：一覧の最後にひかえめに表示 */
+  .regular { margin-top: 22px; }
+  .regular-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 10px 14px;
+    border: 1px dashed var(--line); border-radius: 8px; margin-bottom: 8px; font-size: 13px;
+  }
+  .regular-row:hover { border-color: var(--accent); }
+  .regular-row .rt { font-weight: 700; }
+  .regular-row .rs { color: var(--muted); font-size: 12px; }
+  .regular-row .nx { font-size: 12px; padding: 1px 10px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); background: var(--card); }
+  .regular-row button.nx { cursor: pointer; border-color: var(--accent); color: var(--accent); font-weight: 700; }
+  .regular-row button.nx:hover { background: var(--accent); color: var(--on-accent); }
+  .regular-row .off { margin-left: auto; font-size: 12px; color: var(--muted); text-decoration: none; }
+  .regular-row .off:hover { color: var(--accent); }
+
+  /* 表示切替（リスト／カレンダー） */
+  .view-toggle { margin-left: auto; display: inline-flex; border: 1px solid var(--line); border-radius: 99px; padding: 2px; background: var(--card); }
+  .view-toggle button { white-space: nowrap; border: 0; background: transparent; font-size: 12px; padding: 3px 14px; border-radius: 99px; cursor: pointer; color: var(--muted); }
+  .view-toggle button.on { background: var(--ink); color: var(--bg); }
+
+  /* フィルタ */
+  .filters {
+    display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 8px; padding: 10px 16px;
+    position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px); z-index: 5;
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .filters button {
+    flex: none; font-size: 13px; padding: 4px 14px; border-radius: 99px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  }
+  .filters button.on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .filters .count { color: var(--muted); margin-left: 4px; font-size: 12px; }
+  .filters button.on .count { color: inherit; opacity: .7; }
+  .month { font-family: var(--latin); font-size: 15px; font-weight: 600; letter-spacing: .15em; color: var(--accent); margin: 22px 0 8px; }
+  .month small { font-family: "Noto Sans JP", sans-serif; font-size: 11px; color: var(--muted); letter-spacing: .05em; margin-left: 8px; font-weight: 400; }
+
+  /* カレンダー */
+  .cal-nav { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 8px 0 10px; }
+  .cal-nav .ym { font-family: var(--latin); font-size: 22px; font-weight: 600; letter-spacing: .12em; min-width: 7em; text-align: center; }
+  .cal-nav button { border: 1px solid var(--line); background: var(--card); width: 34px; height: 34px; border-radius: 99px; cursor: pointer; font-size: 15px; }
+  .cal-nav button.today-btn { width: auto; padding: 0 12px; font-size: 12px; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--card); }
+  .cal-dow { font-size: 11px; text-align: center; color: var(--muted); padding: 5px 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg); }
+  .cal-dow.sun { color: var(--alert); } .cal-dow.sat { color: var(--accent); }
+  .cal-day {
+    min-height: 96px; border: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    background: var(--card); padding: 4px; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 3px; min-width: 0;
+  }
+  .cal-day:hover { background: var(--accent-soft); }
+  .cal-day.blank { background: var(--bg); cursor: default; }
+  .cal-day.sel { box-shadow: inset 0 0 0 2px var(--accent); }
+  .cal-day .num { font-size: 12px; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 99px; color: var(--muted); flex: none; }
+  .cal-day.today .num { background: var(--accent); color: var(--on-accent); font-weight: 700; }
+  .chip {
+    font-size: 11px; line-height: 1.45; padding: 1px 5px; border-radius: 4px; background: var(--accent-soft); color: var(--ink);
+    overflow: hidden; border-left: 2px solid var(--accent); word-break: break-all;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  }
+  .chip.dl { background: transparent; color: var(--alert); border: 1px dashed var(--alert); }
+  .cal-note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+  .cal-detail { margin-top: 16px; }
+  .cal-detail .day-head { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+
+  /* はじめての方へ */
+
+  /* 過去のお仕事（コンパクト） */
+  details.past { margin-top: 44px; border-top: 1px solid var(--line); padding-top: 14px; }
+  details.past summary { cursor: pointer; font-size: 14px; color: var(--muted); list-style: none; display: flex; align-items: center; gap: 8px; }
+  details.past summary::-webkit-details-marker { display: none; }
+  details.past summary::before { content: "＋"; color: var(--accent); }
+  details.past[open] summary::before { content: "－"; }
+  .past-year { font-family: var(--latin); font-weight: 600; letter-spacing: .15em; color: var(--muted); margin: 16px 0 4px; }
+  .past-row { display: grid; grid-template-columns: 5.5em 5em 1fr; gap: 8px; font-size: 13px; padding: 7px 0; border-bottom: 1px dashed var(--line); }
+  .past-row .pd, .past-row .pg { color: var(--muted); }
+  .past-row a { text-decoration: none; }
+  .past-row a:hover { color: var(--accent); }
+  .empty { color: var(--muted); font-size: 14px; padding: 12px 0; }
+
+  footer { margin-top: 56px; text-align: center; font-size: 12px; color: var(--muted); line-height: 1.9; }
+  footer .en { display: block; margin-bottom: 6px; }
+
+  @media (max-width: 520px) {
+    header { padding-top: 40px; }
+    .item { grid-template-columns: 50px 1fr; gap: 12px; padding: 14px; }
+    .date .d { font-size: 24px; }
+    .past-row { grid-template-columns: 4.8em 1fr; }
+    .past-row .pg { display: none; }
+    .sec-head .en { font-size: 13px; letter-spacing: .14em; }
+    .view-toggle button { padding: 3px 10px; }
+    .next { padding: 18px; gap: 6px 16px; }
+    .next-count { min-width: 64px; padding-right: 16px; }
+    .next-count b { font-size: 44px; }
+    .next-count b.word { font-size: 22px; }
+    .next-title { font-size: 16px; }
+    .nr-count { min-width: 64px; padding-right: 16px; font-size: 20px; }
+    /* スマホのカレンダーはタイトルを線で表示 → 日付タップで下に詳細 */
+    .cal-day { min-height: 58px; padding: 3px; gap: 2px; align-items: center; }
+    .chip { display: block; font-size: 0; height: 4px; width: 100%; padding: 0; border: 0; background: var(--accent); }
+    .chip.dl { background: none; border: 0; border-top: 4px dotted var(--alert); height: 0; }  /* 色だけでなく点線の形でも区別 */
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="en">KAIKI KIMURA &nbsp;SCHEDULE</div>
+    <h1>木村魁希</h1>
+    <div class="sub">お仕事スケジュール</div>
+    <div class="note"><span>ファン非公式まとめ</span><span>発表済みの情報のみ掲載</span><span id="updated"></span></div>
+  </header>
+
+  <nav class="link-bar" id="link-bar"></nav>
+
+  <section id="next-section"></section>
+
+  <section id="upcoming-section">
+    <div class="sec-head">
+      <span class="en">UPCOMING</span><h2>これからのお仕事</h2>
+      <div class="view-toggle" id="view-toggle">
+        <button data-v="list">リスト</button><button data-v="cal">カレンダー</button>
+      </div>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div id="upcoming"></div>
+    <div id="calendar" hidden></div>
+  </section>
+
+  <details class="past">
+    <summary>これまでのお仕事</summary>
+    <div id="past"></div>
+  </details>
+
+  <footer>
+    <span class="en">UNOFFICIAL</span>
+    当サイトはファンが個人で作成した非公式まとめです。<br>
+    最新・正確な情報は必ず各公式サイトでご確認ください。
+  </footer>
+</div>
+
+<script>
+/* ===== 設定 ===================================================== */
+// Googleスプレッドシートを「ウェブに公開（CSV）」したURLを入れる。空なら下の DATA_CSV を表示
+const SHEET_CSV_URL = "";
+const NEW_DAYS = 7;        // 追加日からこの日数は NEW
+const NEXT_DAYS = 30;      // NEXT欄：開催日までこの日数以内の予定を表示
+const ONSITE_GENRES = ["舞台", "朗読", "イベント"];  // NEXT欄に出す「現地に行ける」ジャンル
+const DEADLINE_GENRE = "締切";  // このジャンルの予定は申込締切として表示（終わったら自動で消える）
+const MEMO_FOLD_LINES = 4;     // メモがこの行数以上なら折りたたむ
+
+// 上部リンクの英字ラベル（ジャンル → ラベル）
+const LINK_LABEL = { "FC": "FAN CLUB", "事務所": "PROFILE" };
+
+/* ===== データ（スプレッドシートと同じ列） ========================
+   終了日に「未定」→ 公開中・放送中のまま表示し続ける（NEXT・カレンダーには出ない）
+   区分に「常設」→ ページ上部のリンクに表示（FC・事務所プロフィール）
+   区分に「定期」→ 「これからのお仕事」の最後にひかえめに表示（月1配信など）
+     次回の配信は、通常の予定のタイトルに『』の中身（例：ジャパニーズ中華★魁希軒）を含めて追加すると自動で「次回」に表示
+   ジャンル「締切」→ 大事な申込締切だけを登録。カレンダーにだけ「〆」で表示（過ぎたら消える）
+   休演日 → カレンダーでその日を空ける（複数は「、」区切り）
+   改行を含むセルは "" で囲む                                      */
+const DATA_CSV = `ジャンル,タイトル,役名・出演,開始日,終了日,日時補足,場所・媒体,チケット・申込,公式リンク,メモ,追加日,区分,休演日
+映画,映画『マッチモンド』,幸村リオン役,2026-09-11,未定,,全国の劇場で公開中,,http://match-mondo.com,,,,
+ドラマ,ドラマ『陽キャ集団にいる芹沢は、俺の前だと様子がおかしい』,竹内知明役,2026-08-10,未定,毎週月曜 深夜1:29〜,読売テレビ「ドラマDiVE」,,http://ytv.co.jp/youkya_shudan/,TVerでも見逃し配信あり,,,
+舞台,舞台『スナック・モブキャラ』,戦闘員役,2026-10-07,2026-10-13,全9公演,博品館劇場,,http://aoi-stage.jp/snamob/,"10/7(水) 19:00
+10/8(木) 19:00
+10/9(金) 14:00／19:00
+10/10(土) 13:00／17:00
+10/12(月祝) 13:00／17:00
+10/13(火) 14:00",,,2026-10-11
+舞台,休演日特別企画 完全即興舞台『私、こんな役、演じてみたいんですけど。』,,2026-10-11,,①13:00〜 ②17:00〜,博品館劇場,,http://aoi-stage.jp/wataen2026/,,,,
+イベント,葉山侑樹 Birthday Event 2026,【2部】ゲスト出演,2026-10-25,,,,,https://yukihayamafc.com/news/msG6NpTdCNymWfbZfsuQ2R,,,,
+イベント,鈴木秀脩 23rd Birthdayイベント,【2部】ゲスト出演,2026-11-07,,1部 13:00／2部 17:30,浅草・雷5656会館 ときわホール,,https://suzuki-hideharu.com/news/TG26jaLkfuyZs2YHXiNcXp,,,,
+朗読,朗読劇『名前を呼んで、もう一度』,11/13(金) マチネ・ソワレ出演（東京公演）,2026-11-13,,,スタァライト劇場,,http://callmyname2026.com,"日替わりキャスト公演
+東京：11/12(木)〜14(土) スタァライト劇場
+大阪：11/19(木)〜22(日) 梅田芸術劇場 シアター・ドラマシティ",2026-10-01,,
+イベント,『ナンバーワン戦隊ゴジュウジャー ポーラー・ビギニング』Blu-ray発売記念イベント,,2027-02-20,,※時間・会場など詳細は後日発表,都内某所,イベント参加券付きBlu-ray（2027/1/13発売）の予約が必要／予約締切 11/12(木),https://toei-video.co.jp/special/50ger-pb/,,,,
+イベント,TORNADO MART 30周年コラボ ≪PART1≫ KAIKI KIMURA SPECIAL EVENT,,2026-11-07,2026-11-08,各日 13:00〜／15:00〜,有楽町マルイ（TORNADO MART）,"ONLINE STOREで対象商品を合計24,000円（税抜）以上購入で申込
+申込期間：10/2(金)18:00〜10/25(日)23:59",https://cdn.mailpublisher.jp/199/558840/hosting/d66469bb-2b4b-4448-b56e-5e9100719830,購入特典：ブロマイド（全4種）・アクリルスタンド（全3種）,2026-10-06,,
+締切,ゴジュウジャー Blu-ray発売記念イベント 参加券付き商品の予約締切,,2026-11-12,,,,イベント参加券付きBlu-ray（2027/1/13発売）,https://toei-video.co.jp/special/50ger-pb/,,,,
+FC,KaiKi Village,,,,月1 顔出し配信／ゲリラでラジオ配信も,Fanicon,,https://fanicon.net/fancommunities/6360,,,常設,
+事務所,木村魁希 公式プロフィール,,,,,,,https://a-light.jp/talent/kimurakaiki,,,常設,
+配信,NATSLIVE『ジャパニーズ中華★魁希軒』,,,,月1開催の料理＆配信番組,NATSLIVE,,http://natslive.jp,,,定期,`;
+
+/* ===== ここから下は基本さわらなくてOK ============================ */
+const WEEK = ["日", "月", "火", "水", "木", "金", "土"];
+const MONTH_EN = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+const LIVE_LABEL = { "映画": "公開中", "ドラマ": "放送中", "配信": "配信中", "コラボ": "販売中" };
+const today = new Date(); today.setHours(0, 0, 0, 0);
+let items = [], current = "すべて";
+let view = "list", calMonth = new Date(today.getFullYear(), today.getMonth(), 1), calSel = today;
+try { view = localStorage.getItem("view") === "cal" ? "cal" : "list"; } catch (e) {}
+
+function parseCSV(text) {
+  const rows = []; let row = [], cell = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) {
+      if (c === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+      else if (c === '"') q = false;
+      else cell += c;
+    } else if (c === '"') q = true;
+    else if (c === ",") { row.push(cell); cell = ""; }
+    else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(cell); rows.push(row); row = []; cell = "";
+    } else cell += c;
+  }
+  if (cell || row.length) { row.push(cell); rows.push(row); }
+  const [head, ...body] = rows;
+  return body.filter(r => r.some(v => v.trim()))
+    .map(r => Object.fromEntries(head.map((h, i) => [h.replace(/^﻿/, "").trim(), (r[i] || "").trim()])));
+}
+
+function toDate(s) {
+  if (!s) return null;
+  const m = s.match(/(\d{4})[\/\-年.](\d{1,2})[\/\-月.](\d{1,2})/);
+  return m ? new Date(+m[1], m[2] - 1, +m[3]) : null;
+}
+const daysBetween = (a, b) => Math.round((b - a) / 86400000);
+const sameDay = (a, b) => a && b && a.getTime() === b.getTime();
+const ymd = d => `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
+const md = d => `${d.getMonth() + 1}/${d.getDate()}(${WEEK[d.getDay()]})`;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const matchGenre = o => current === "すべて" || o.genre === current;
+// カレンダー用の短いタイトル：『』の中身があればそれを使う
+const shortTitle = o => (o.title.match(/『(.+?)』/) || [, o.title])[1];
+
+function normalize(r, i) {
+  const start = toDate(r["開始日"]);
+  const openEnd = /未定|〜|~/.test(r["終了日"] || "");
+  const end = openEnd ? null : (toDate(r["終了日"]) || start);
+  const o = {
+    id: "e" + i, genre: r["ジャンル"] || "その他", title: r["タイトル"], role: r["役名・出演"],
+    start, end, openEnd, added: toDate(r["追加日"]),
+    timeNote: r["日時補足"], place: r["場所・媒体"], ticket: r["チケット・申込"],
+    link: r["公式リンク"], memo: r["メモ"], kind: /常設/.test(r["区分"] || "") ? "link" : /定期/.test(r["区分"] || "") ? "regular" : "",
+    get always() { return !!this.kind; },
+    offDays: (r["休演日"] || "").split(/[、,\s]+/).map(toDate).filter(Boolean).map(ymd),
+  };
+  o.past = !o.always && !openEnd && end ? end < today : false;
+  o.live = start && start <= today && (openEnd || end >= today);
+  o.isDeadline = o.genre === DEADLINE_GENRE;
+  // 場所に「オンライン」「配信」「アプリ」とあるものは現地扱いにしない
+  o.onsite = ONSITE_GENRES.includes(o.genre) && !/オンライン|配信|アプリ/.test(o.place || "");
+  o.isNew = o.added && daysBetween(o.added, today) >= 0 && daysBetween(o.added, today) <= NEW_DAYS;
+  o.daysToStart = start && start > today ? daysBetween(today, start) : null;
+  return o;
+}
+
+function liveLabel(o) {
+  if (sameDay(o.start, o.end)) return "本日";
+  return LIVE_LABEL[o.genre] || "開催中";
+}
+
+function badges(o) {
+  let b = "";
+  if (o.isNew) b += `<span class="badge new">NEW</span>`;
+  if (o.live) b += `<span class="badge live">${liveLabel(o)}</span>`;
+  return b;
+}
+
+function gcalUrl(o) {
+  if (!o.start || o.openEnd || o.always) return null;
+  const endEx = new Date(o.end); endEx.setDate(endEx.getDate() + 1);
+  const p = new URLSearchParams({
+    action: "TEMPLATE", text: o.title, dates: `${ymd(o.start)}/${ymd(endEx)}`,
+    details: [o.role, o.timeNote, o.ticket, o.memo, o.link].filter(Boolean).join("\n"), location: o.place || "",
+  });
+  return "https://calendar.google.com/calendar/render?" + p;
+}
+
+function whenText(o) {
+  if (!o.start) return o.timeNote || "";
+  if (o.openEnd) return `${md(o.start)}〜`;
+  return o.end > o.start ? `${md(o.start)}〜${md(o.end)}` : md(o.start);
+}
+
+function memoHtml(o) {
+  if (!o.memo) return "";
+  const memo = `<div class="memo">${esc(o.memo)}</div>`;
+  if (o.memo.split("\n").length < MEMO_FOLD_LINES) return memo;
+  return `<details class="more"><summary>詳細を見る</summary>${memo}</details>`;
+}
+
+function card(o, idPrefix = "") {
+  let date = "";
+  if (!o.always) {
+    if (!o.start) date = `<div class="tbd">日程<br>未定</div>`;
+    else {
+      date = `<div class="m">${MONTH_EN[o.start.getMonth()]}</div><div class="d">${o.start.getDate()}</div><div class="w">${WEEK[o.start.getDay()]}</div>`;
+      if (o.openEnd) date += `<div class="r">〜</div>`;
+      else if (o.end > o.start) date += `<div class="r">〜${o.end.getMonth() + 1}/${o.end.getDate()}</div>`;
+    }
+    date = `<div class="date">${date}</div>`;
+  }
+  const meta = [
+    ["日時", o.timeNote], ["場所", o.place],
+    ["申込", o.ticket],
+  ].filter(([, v]) => v).map(([k, v]) => `<div><dt>${k}</dt><dd style="margin:0">${esc(v)}</dd></div>`).join("");
+  const g = gcalUrl(o);
+  return `<article class="item${o.isDeadline ? " is-deadline" : ""}" id="${idPrefix}${o.id}">
+    ${date}
+    <div>
+      <div class="head"><span class="genre">${esc(o.genre)}</span>${badges(o)}</div>
+      <div class="title">${esc(o.title)}</div>
+      ${o.role ? `<div class="role">${esc(o.role)}</div>` : ""}
+      ${meta ? `<dl class="meta" style="margin:6px 0 0">${meta}</dl>` : ""}
+      ${memoHtml(o)}
+      <div class="actions">
+        ${o.link ? `<a class="primary" href="${esc(o.link)}" target="_blank" rel="noopener">公式サイト</a>` : ""}
+        ${g ? `<a href="${g}" target="_blank" rel="noopener">カレンダーに追加</a>` : ""}
+      </div>
+    </div>
+  </article>`;
+}
+
+/* --- NEXT：1か月以内に開催される、現地に行ける予定 --- */
+function countdown(o) {
+  if (o.live) return sameDay(o.start, o.end) ? ["TODAY", "本日"] : ["NOW", "開催中"];
+  if (o.daysToStart === 1) return ["明日", ""];
+  return [o.daysToStart, "日後"];
+}
+
+function renderNext() {
+  const sec = document.getElementById("next-section");
+  const list = items.filter(o => !o.past && !o.kind && o.onsite && o.start && !o.openEnd &&
+      (o.live || o.daysToStart <= NEXT_DAYS))
+    .sort((a, b) => Math.max(a.start, today) - Math.max(b.start, today) || a.start - b.start);
+  if (!list.length) { sec.hidden = true; return; }
+  const [o, ...rest] = list;
+  const [big, small] = countdown(o);
+  const info = [whenText(o), o.place].filter(Boolean).map(esc).join("　");
+  const g = gcalUrl(o);
+  sec.hidden = false;
+  sec.innerHTML = `<div class="next">
+    <div class="next-label">NEXT<span>1か月以内の現地のお仕事</span></div>
+    <div class="next-count"><b class="${typeof big === "number" ? "" : "word"}">${big}</b><span>${small}</span></div>
+    <div>
+      <div class="next-genre">${esc(o.genre)}</div>
+      <div class="next-title">${esc(o.title)}</div>
+      ${o.role ? `<div class="next-info">${esc(o.role)}</div>` : ""}
+      <div class="next-info">${info}</div>
+    </div>
+    <div class="next-actions">
+      ${o.link ? `<a class="primary" href="${esc(o.link)}" target="_blank" rel="noopener">公式サイト</a>` : ""}
+      <button data-jump="${o.id}">詳細を見る</button>
+      ${g ? `<a href="${g}" target="_blank" rel="noopener">カレンダーに追加</a>` : ""}
+    </div>
+    ${rest.length ? `<div class="next-more">${rest.map(r => {
+      const [b, s] = countdown(r);
+      return `<button class="next-row" data-jump="${r.id}">
+        <span class="nr-count">${b}<small>${typeof b === "number" ? s : ""}</small></span>
+        <span class="nr-main"><span class="nr-title">${esc(r.title)}</span><span class="nr-info">${[whenText(r), r.place].filter(Boolean).map(esc).join("　")}</span></span>
+        <span class="nr-arrow">›</span></button>`;
+    }).join("")}</div>` : ""}
+  </div>`;
+  sec.querySelectorAll("[data-jump]").forEach(b => b.onclick = () => { setView("list"); jump(b.dataset.jump); });
+}
+
+function renderUpcoming() {
+  const list = items.filter(o => !o.past && !o.always && !o.isDeadline && matchGenre(o))
+    .sort((a, b) => {
+      if (!!a.live !== !!b.live) return a.live ? -1 : 1;
+      if (!a.start || !b.start) return !a.start - !b.start;
+      return a.start - b.start;
+    });
+  const el = document.getElementById("upcoming");
+  const regular = items.filter(o => o.kind === "regular" && matchGenre(o));
+  const regularHtml = regular.length ? `<div class="regular"><div class="month">REGULAR<small>定期配信など</small></div>${regular.map(o => {
+    const nx = nextOfRegular(o);
+    const nxHtml = nx ? `<button class="nx" data-jump="${nx.id}">次回 ${nx.live ? "配信中" : md(nx.start)}${nx.timeNote ? " " + esc(nx.timeNote) : ""}</button>`
+      : `<span class="nx">次回 未定</span>`;
+    return `<div class="regular-row"><span class="genre">${esc(o.genre)}</span><span class="rt">${esc(o.title)}</span><span class="rs">${esc(o.timeNote)}</span>${nxHtml}${o.link ? `<a class="off" href="${esc(o.link)}" target="_blank" rel="noopener">公式 ↗</a>` : ""}</div>`;
+  }).join("")}</div>` : "";
+  if (!list.length) {
+    el.innerHTML = `<div class="empty">発表済みの予定はありません</div>` + regularHtml;
+    el.querySelectorAll(".regular-row [data-jump]").forEach(b => b.onclick = () => jump(b.dataset.jump));
+    return;
+  }
+  let html = "", last = "";
+  for (const o of list) {
+    const key = o.live ? `NOW ON<small>公開中・放送中</small>`
+      : o.start ? `${o.start.getFullYear()}.${String(o.start.getMonth() + 1).padStart(2, "0")}` : `TBA<small>日程未定</small>`;
+    if (key !== last) { html += `<div class="month">${key}</div>`; last = key; }
+    html += card(o);
+  }
+  el.innerHTML = html + regularHtml;
+  el.querySelectorAll(".regular-row [data-jump]").forEach(b => b.onclick = () => jump(b.dataset.jump));
+}
+
+// 定期の行に対応する「次回」：タイトルに『』の中身を含む通常の予定のうち、いちばん近いもの
+function nextOfRegular(r) {
+  const key = shortTitle(r);
+  return items.filter(o => !o.kind && !o.past && o.start && o.title.includes(key))
+    .sort((a, b) => a.start - b.start)[0] || null;
+}
+
+/* --- 月カレンダー --- */
+function eventsOn(d) {
+  return items.filter(o => !o.always && !o.openEnd && o.start && matchGenre(o) && o.start <= d && d <= o.end && !o.offDays.includes(ymd(d)));
+}
+
+function renderCalendar() {
+  const y = calMonth.getFullYear(), m = calMonth.getMonth();
+  const offset = new Date(y, m, 1).getDay(), days = new Date(y, m + 1, 0).getDate();
+  let cells = WEEK.map((w, i) => `<div class="cal-dow${i === 0 ? " sun" : i === 6 ? " sat" : ""}">${w}</div>`).join("");
+  for (let i = 0; i < offset; i++) cells += `<div class="cal-day blank"></div>`;
+  for (let d = 1; d <= days; d++) {
+    const date = new Date(y, m, d);
+    const chips = eventsOn(date).map(o => o.isDeadline
+        ? `<span class="chip dl" title="${esc(o.title)}">〆 ${esc(shortTitle(o))}</span>`
+        : `<span class="chip" title="${esc(o.title)}">${esc(shortTitle(o))}</span>`).join("")
+    const cls = ["cal-day", sameDay(date, today) && "today", sameDay(date, calSel) && "sel"].filter(Boolean).join(" ");
+    cells += `<button class="${cls}" data-d="${d}"><span class="num">${d}</span>${chips}</button>`;
+  }
+  const rest = (7 - (offset + days) % 7) % 7;
+  for (let i = 0; i < rest; i++) cells += `<div class="cal-day blank"></div>`;
+
+  const el = document.getElementById("calendar");
+  el.innerHTML = `
+    <div class="cal-nav">
+      <button data-nav="-1" aria-label="前の月">‹</button>
+      <span class="ym">${y}.${String(m + 1).padStart(2, "0")}</span>
+      <button data-nav="1" aria-label="次の月">›</button>
+      <button class="today-btn" data-nav="0">今月</button>
+    </div>
+    <div class="cal-grid">${cells}</div>
+    <div class="cal-note">※ 公開中・放送中の作品（終了日未定のもの）はリスト表示でご確認ください</div>
+    <div class="cal-detail" id="cal-detail"></div>`;
+  el.querySelectorAll("[data-nav]").forEach(b => b.onclick = () => {
+    const n = +b.dataset.nav;
+    calMonth = n ? new Date(y, m + n, 1) : new Date(today.getFullYear(), today.getMonth(), 1);
+    calSel = n ? null : today;
+    renderCalendar();
+  });
+  el.querySelectorAll(".cal-day[data-d]").forEach(b => b.onclick = () => {
+    calSel = new Date(y, m, +b.dataset.d); renderCalendar();
+    document.getElementById("cal-detail").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+  renderCalDetail();
+}
+
+function renderCalDetail() {
+  const el = document.getElementById("cal-detail");
+  if (!calSel) { el.innerHTML = `<div class="empty">日付をタップすると、その日の予定が表示されます</div>`; return; }
+  const evs = eventsOn(calSel);
+  let html = `<div class="day-head">${calSel.getMonth() + 1}月${calSel.getDate()}日(${WEEK[calSel.getDay()]})</div>`;
+  if (!evs.length) html += `<div class="empty">この日の予定はありません</div>`;
+  html += evs.map(o => card(o, "cal-")).join("");
+  el.innerHTML = html;
+}
+
+/* --- 表示切替・フィルタ --- */
+function setView(v) {
+  view = v;
+  try { localStorage.setItem("view", v); } catch (e) {}
+  document.querySelectorAll("#view-toggle button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+  document.getElementById("upcoming").hidden = v !== "list";
+  document.getElementById("calendar").hidden = v !== "cal";
+  if (v === "cal") renderCalendar();
+}
+
+function renderFilters() {
+  const active = items.filter(o => !o.past && !o.always && !o.isDeadline);
+  const genres = [...new Set(active.filter(o => !o.isDeadline).map(o => o.genre))];
+  const el = document.getElementById("filters");
+  const cnt = g => active.filter(o => g === "すべて" || o.genre === g).length;
+  el.innerHTML = ["すべて", ...genres].map(g =>
+    `<button class="${g === current ? "on" : ""}" data-g="${esc(g)}">${esc(g)}<span class="count">${cnt(g)}</span></button>`).join("");
+  el.querySelectorAll("button").forEach(b => b.onclick = () => {
+    current = b.dataset.g; renderFilters(); renderUpcoming(); if (view === "cal") renderCalendar();
+  });
+}
+
+function renderLinks() {
+  const list = items.filter(o => o.kind === "link");
+  const el = document.getElementById("link-bar");
+  el.hidden = !list.length;
+  el.innerHTML = list.map(o => `<a class="link-tile" href="${esc(o.link)}" target="_blank" rel="noopener">
+    <span class="lb">${esc(LINK_LABEL[o.genre] || o.genre)}</span>
+    <span><span class="lt">${esc(o.title)}</span>${o.timeNote ? `<br><span class="ls">${esc(o.timeNote)}</span>` : ""}</span>
+    <span class="arrow">↗</span></a>`).join("");
+}
+
+function renderPast() {
+  const list = items.filter(o => o.past && !o.isDeadline).sort((a, b) => b.start - a.start);
+  const el = document.getElementById("past");
+  if (!list.length) { el.innerHTML = `<div class="empty">終了したお仕事はここにまとまります</div>`; return; }
+  let html = "", year = "";
+  for (const o of list) {
+    const y = o.start ? o.start.getFullYear() : "";
+    if (y !== year) { html += `<div class="past-year">${y}</div>`; year = y; }
+    const title = o.link ? `<a href="${esc(o.link)}" target="_blank" rel="noopener">${esc(o.title)}</a>` : esc(o.title);
+    html += `<div class="past-row" id="${o.id}"><span class="pd">${o.start ? `${o.start.getMonth() + 1}/${o.start.getDate()}` : ""}</span><span class="pg">${esc(o.genre)}</span><span>${title}${o.role ? `<span style="color:var(--muted)"> ／ ${esc(o.role)}</span>` : ""}</span></div>`;
+  }
+  el.innerHTML = html;
+}
+
+function jump(id) {
+  if (current !== "すべて") { current = "すべて"; renderFilters(); renderUpcoming(); }
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (el.closest("details.past")) el.closest("details.past").open = true;
+  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  el.classList.add("flash"); setTimeout(() => el.classList.remove("flash"), 1600);
+}
+
+async function load() {
+  let csv = DATA_CSV;
+  if (SHEET_CSV_URL) {
+    try { csv = await (await fetch(SHEET_CSV_URL + (SHEET_CSV_URL.includes("?") ? "&" : "?") + "t=" + Date.now())).text(); }
+    catch (e) { console.error("スプレッドシートの読み込みに失敗", e); }
+  }
+  items = parseCSV(csv).filter(r => r["タイトル"]).map(normalize);
+  const latest = items.map(o => o.added).filter(Boolean).sort((a, b) => b - a)[0];
+  const u = document.getElementById("updated");
+  if (latest) u.textContent = `最終更新 ${latest.getFullYear()}/${latest.getMonth() + 1}/${latest.getDate()}`; else u.remove();
+  document.querySelectorAll("#view-toggle button").forEach(b => b.onclick = () => setView(b.dataset.v));
+  renderLinks(); renderNext(); renderFilters(); renderUpcoming(); renderPast();
+  setView(view);
+  if (location.hash) setTimeout(() => { setView("list"); jump(location.hash.slice(1)); }, 300);
+}
+load();
+</script>
+</body>
+</html>
