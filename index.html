@@ -176,8 +176,8 @@
 
   /* フィルタ */
   .filters {
+    /* 上部固定（sticky）はXのアプリ内ブラウザで位置がずれるため使わない */
     display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 8px; padding: 10px 16px;
-    position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px); z-index: 5;
   }
   .filters::-webkit-scrollbar { display: none; }
   .filters button {
